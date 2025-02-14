@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +16,21 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--foreground-rgb));
+  background: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.upload-progress-bar {
+  @apply h-2 bg-blue-600 rounded-full transition-all duration-300 ease-in-out;
+}
+
+.upload-container {
+  @apply relative border-2 border-dashed border-gray-300 rounded-lg p-6 
+         hover:border-blue-500 transition-colors duration-200 
+         cursor-pointer bg-gray-50 hover:bg-gray-100;
+}
+
+.upload-container.dragging {
+  @apply border-blue-500 bg-blue-50;
 }
