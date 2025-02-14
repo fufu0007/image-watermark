@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic';
-export const maxDuration = 300;
+export const maxDuration = 10;
 
 import sharp from 'sharp';
 import JSZip from 'jszip';

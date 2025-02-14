@@ -12,7 +12,12 @@ const nextConfig = {
         stream: false,
       };
     }
-    
+
+    // 移除旧的 worker 配置
+    config.module.rules = config.module.rules.filter(
+      rule => rule.test?.toString() !== '/\\.(ts|js)$/'
+    );
+
     if (isServer) {
       config.externals = [...(config.externals || []), 'sharp'];
     }
